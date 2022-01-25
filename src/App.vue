@@ -1,20 +1,11 @@
 <template>
-  <Header />
-  <Courses />
+  <router-view></router-view>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import Header from '@/components/Header.vue'
-import Courses from '@/views/Courses.vue'
-
-export default defineComponent({
-  components: {
-    Header,
-    Courses
-  }
-})
+export default defineComponent({})
 
 </script>
 

@@ -1,6 +1,7 @@
 <template>
     <div class='action-bar'>
         <SearchBar placeholder='Enter course name...' />
+        <Button @click='navigateCreateCourse' text='Add new course' :style='{ float: "right" }' />
     </div>
     <main>
         <CourseCard v-for='course in courses' :course='course' :key='course.id' />
@@ -14,15 +15,22 @@ import { DataSource, Course } from '@/helpers/DataSource'
 
 import SearchBar from '@/components/common/SearchBar.vue'
 import CourseCard from '@/components/CourseCard.vue'
+import Button from '@/components/common/Button.vue'
 
 export default defineComponent({
   components: {
     CourseCard,
-    SearchBar
+    SearchBar,
+    Button
   },
   data () {
     return {
       courses: [] as Course[]
+    }
+  },
+  methods: {
+    navigateCreateCourse () {
+      this.$router.push('/courses/add')
     }
   },
   mounted () {
